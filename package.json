@@ -1,0 +1,30 @@
+{
+  "name": "@tinlynk/sdk",
+  "version": "0.1.0",
+  "private": false,
+  "description": "TinLynk SDK: model and tool clients, transports, agent runtime.",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "prepare": "npm run build",
+    "test": "npm run build && node --test test/**/*.test.mjs"
+  },
+  "dependencies": {
+    "@tinlynk/protocol": "file:../protocol"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/node": "^22.0.0"
+  },
+  "engines": { "node": ">=22.0.0" }
+}
